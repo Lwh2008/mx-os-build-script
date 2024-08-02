@@ -1,15 +1,14 @@
 name: MengXiOS-build-test
-
-on: push
-
+on: [push]
 jobs:
-  build:
+  package:
     runs-on: ubuntu-latest
-
     steps:
+
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: build-test
       run: |
+        echo $USER
         bash build.sh
