@@ -1,23 +1,14 @@
 #!/bin/bash
-
-echo '检测目录下是否有mxde文件夹'
+sudo cd /root
 if test -e ./mxde 
 then
-  echo '检测到同名文件夹, 正在删除'
   sudo rm -rf ./mxde
-  echo '删除完毕, 重新创建文件夹, 继续编译'
   mkdir ./mxde
 else
-  echo "无同名文件夹, 继续编译"
   mkdir ./mxde
-fi
-#安装依赖
-echo '开始安装依赖'
-sudo apt install libpolkit-qt5-1-dev qml-module-qtquick-dialogs libxcb-damage0-dev libicu-dev libqapt-dev libkf5solid-dev pkg-config extra-cmake-modules libpam0g-dev libxcb-util-dev lintian libsm-dev libkf5screen-dev libxcb-composite0-dev qml-module-qt-labs-settings libqt5sensors5-dev libcanberra-dev qml-module-qtqml debhelper libfreetype6-dev libkf5bluezqt-dev qml-module-qtquick-shapes libapt-pkg-dev xserver-xorg-dev qtbase5-dev libx11-dev libcrypt-dev libfontconfig1-dev cmake qml-module-qtquick-particles2 libxcb1-dev xserver-xorg-input-synaptics-dev libkf5idletime-dev libkf5networkmanagerqt-dev automake libqt5x11extras5-dev git libxcb-dri2-0-dev qml-module-qtquick2 libxcursor-dev qttools5-dev qml-module-qtquick-layouts libcanberra-pulse libxcb-keysyms1-dev libsystemd-dev gcc -y libxcb-glx0-dev qttools5-dev-tools qml-module-qtquick-window2 libxcb-image0-dev libcap-dev libpulse-dev libxcb-randr0-dev qml-module-qtquick-controls2 libxcb-shm0-dev libxcb-ewmh-dev equivs libxcb-icccm4-dev qtdeclarative5-dev libkf5kio-dev qtquickcontrols2-5-dev libkf5coreaddons-dev devscripts libxcb-xfixes0-dev libxcb-record0-dev qml-module-qt-labs-platform libxtst-dev libxcb-dpms0-dev build-essential libkf5windowsystem-dev xserver-xorg-input-libinput-dev autotools-dev libx11-xcb-dev libxcb-dri3-dev qml-module-org-kde-kwindowsystem libkf5globalaccel-dev qtbase5-private-dev modemmanager-qt-dev libpolkit-agent-1-dev curl libxcb-shape0-dev --no-install-recommends -y
-sudo apt install livebuild 
-
-echo '依赖安装完成'
-echo '开始编译...'
+fi && {
+sudo chown -R $USER mxde
+sudo apt install libpolkit-qt5-1-dev qml-module-qtquick-dialogs libxcb-damage0-dev libicu-dev libqapt-dev libkf5solid-dev pkg-config extra-cmake-modules libpam0g-dev libxcb-util-dev lintian libsm-dev libkf5screen-dev libxcb-composite0-dev qml-module-qt-labs-settings libqt5sensors5-dev libcanberra-dev qml-module-qtqml debhelper libfreetype6-dev libkf5bluezqt-dev qml-module-qtquick-shapes libapt-pkg-dev xserver-xorg-dev qtbase5-dev libx11-dev libcrypt-dev libfontconfig1-dev cmake qml-module-qtquick-particles2 libxcb1-dev xserver-xorg-input-synaptics-dev libkf5idletime-dev libkf5networkmanagerqt-dev automake libqt5x11extras5-dev git libxcb-dri2-0-dev qml-module-qtquick2 libxcursor-dev qttools5-dev qml-module-qtquick-layouts libcanberra-pulse libxcb-keysyms1-dev libsystemd-dev gcc neofetch libxcb-glx0-dev qttools5-dev-tools qml-module-qtquick-window2 libxcb-image0-dev libcap-dev libpulse-dev libxcb-randr0-dev qml-module-qtquick-controls2 libxcb-shm0-dev libxcb-ewmh-dev equivs libxcb-icccm4-dev qtdeclarative5-dev libkf5kio-dev qtquickcontrols2-5-dev libkf5coreaddons-dev devscripts libxcb-xfixes0-dev libxcb-record0-dev qml-module-qt-labs-platform libxtst-dev libxcb-dpms0-dev build-essential libkf5windowsystem-dev xserver-xorg-input-libinput-dev autotools-dev libx11-xcb-dev libxcb-dri3-dev qml-module-org-kde-kwindowsystem libkf5globalaccel-dev qtbase5-private-dev modemmanager-qt-dev libpolkit-agent-1-dev curl libxcb-shape0-dev --no-install-recommends -y } && sudo apt install livebuild -y && {
 cd ./mxde
 git clone https://gitee.com/cutefishos/filemanager.git
 cd filemanager
@@ -26,10 +17,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/dock.git
 cd dock
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -37,10 +27,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/fishui.git
 cd fishui
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -48,10 +37,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/screenshot.git
 cd screenshot
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -59,10 +47,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/qt-plugins.git
 cd qt-plugins
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -70,10 +57,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/terminal.git
 cd terminal
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -81,10 +67,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/launcher.git
 cd launcher
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -92,10 +77,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/zhonghongsoftware_1/meng-xi-os
 git clone https://gitee.com/cutefishos/settings.git
 rm settings/src/qml/About/Main.qml
@@ -108,10 +92,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/debinstaller.git
 cd debinstaller
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -119,10 +102,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/icons.git
 cd icons
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -130,10 +112,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/gtk-themes.git
 cd gtk-themes
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -141,10 +122,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/daemon.git
 cd daemon
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -152,10 +132,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/statusbar.git
 cd statusbar
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -163,10 +142,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/libcutefish.git
 cd libcutefish
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -174,10 +152,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/core.git
 cd core
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -185,10 +162,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/updator.git
 cd updator
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -196,10 +172,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/screenlocker.git
 cd screenlocker
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -207,10 +182,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/texteditor.git
 cd texteditor
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -218,10 +192,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/calculator.git
 cd calculator
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -229,10 +202,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/kwin-plugins.git
 cd kwin-plugins
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -242,8 +214,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/videoplayer.git
 cd videoplayer
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -251,10 +222,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/sddm-theme.git
 cd sddm-theme
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -262,10 +232,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
+cd /root/mxde
 git clone https://gitee.com/cutefishos/wallpapers.git
 rm -rf ./wallpapers/sources/*.png
 cp meng-xi-os/wallpaper/*.png ./wallpapers/sources/
@@ -275,12 +244,9 @@ dpkg-buildpackage -b -uc -us
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make
+make -j$(nproc)
 sudo make install
-cd ..
-cd ..
-echo 'Desktop Environment Build Finish...'
-echo 'Start Compiling Components'
+cd /root/mxde
 git clone https://gitee.com/zhonghongsoftware_1/osfetch
 cd osfetch
 sudo make build
@@ -306,11 +272,8 @@ cd wine-control
 sudo make build
 cp com.zhsoft.wine.control.deb ../
 cd ..
-echo 'All Done'
-echo '正在准备构建...'
 cp ./*.deb  ./config/packages/
 cd ..
-echo '开始构建....'
 sudo live build
-echo '构建完成！'
-ls
+ls 
+neofetch }
