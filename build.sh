@@ -276,4 +276,5 @@ cp ./*.deb  ./config/packages/
 cd ..
 sudo live build
 ls 
-neofetch }
+neofetch
+}
