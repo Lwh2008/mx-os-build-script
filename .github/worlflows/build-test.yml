@@ -1,6 +1,6 @@
 name: MengXiOS-build-test
 
-on: [push]
+on: push
 
 jobs:
   build:
