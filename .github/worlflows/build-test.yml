@@ -10,5 +10,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      run: bash build.sh
+    - name: build-test
+      run: |
+        bash build.sh
