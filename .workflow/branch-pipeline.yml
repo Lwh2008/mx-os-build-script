@@ -1,0 +1,31 @@
+version: '1.0'  
+stages:  
+  - build  
+  - release  
+  
+steps:  
+  buildStep:  
+    stage: build  
+    image: golang:latest  
+    commands:  
+      - git checkout main  
+      - chmod +x build.sh  
+      - ./build.sh  
+    artifacts:  
+      - iso/**  
+  
+  releaseStep:  
+    stage: release  
+    image: curlimages/curl:latest  
+    environment:  
+      - GITEE_TOKEN: 474d1d2abb89449068a827c8e7d747ab
+      - REPO_NAME: meng-xi-os-auto-build  
+      - OWNER: zhonghongsoftware
+    commands:  
+      - curl -H "Content-Type: application/json" -H "Authorization: token $GITEE_TOKEN" -X POST -d '{"tag_name":"v$(date +%Y%m%d%H%M%S)","title":"Release $(date +%Y%m%d%H%M%S)","note":"Auto Release","assets":[{"name":"$(ls iso/*.iso)","label":"ISO File","content_type":"application/octet-stream"}]}' "https://gitee.com/api/v5/repos/$OWNER/$REPO_NAME/releases" --output release_response.json  
+      - cat release_response.json  
+      - |  
+        # 使用curl上传ISO文件  
+        upload_url=$(jq -r '.upload_url' release_response.json)  
+        file_to_upload=$(ls iso/*.iso)  
+        curl -H "Content-Type: application/octet-stream" -H "Authorization: token $GITEE_TOKEN" --data-binary "@$file_to_upload" "$upload_url"
