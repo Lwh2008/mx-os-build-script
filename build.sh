@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo cd /root
+cd /root
 if test -e ./mxde 
 then
   sudo rm -rf ./mxde
