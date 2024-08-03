@@ -217,6 +217,6 @@ cd ..
 git clone https://gitee.com/zhonghongsoftware/wine-control
 cd wine-control
 make build -j8 > /dev/null
-cp com.zhsoft.wine.control.deb ../
+#cp com.zhsoft.wine.control.deb ../
 #cd ..
 #cp ./*.deb  ./config/packages/
