@@ -12,9 +12,11 @@ jobs:
       run: |
         echo $USER
         bash build.sh
-        sudo apt install tree -y
+
     - name: build-iso
-      run: bash make-iso.sh
+      run: |
+        sudo apt install tree -y
+        bash make-iso.sh
    
     - name: ls
       run: |
