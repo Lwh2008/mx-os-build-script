@@ -1,5 +1,6 @@
 #!/bin/bash
 #因为在Docker里面运行所以没加sudo
+#git clone https://github.com/Lwh2008/mx-os-build-script
 pwd
 mkdir mxde
 cd mxde
@@ -217,5 +218,5 @@ git clone https://gitee.com/zhonghongsoftware/wine-control
 cd wine-control
 make build -j8 > /dev/null
 cp com.zhsoft.wine.control.deb ../
-cd ..
-cp ./*.deb  ./config/packages/
+#cd ..
+#cp ./*.deb  ./config/packages/
