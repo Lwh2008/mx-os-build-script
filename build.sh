@@ -17,7 +17,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/dock.git
@@ -27,7 +27,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/fishui.git
@@ -37,7 +37,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/screenshot.git
@@ -47,7 +47,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/qt-plugins.git
@@ -57,7 +57,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/terminal.git
@@ -67,7 +67,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/launcher.git
@@ -77,7 +77,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/zhonghongsoftware_1/meng-xi-os
@@ -92,7 +92,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/debinstaller.git
@@ -102,7 +102,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/icons.git
@@ -112,7 +112,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/gtk-themes.git
@@ -122,7 +122,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/daemon.git
@@ -132,7 +132,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/statusbar.git
@@ -142,7 +142,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/libcutefish.git
@@ -152,7 +152,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/core.git
@@ -162,7 +162,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/updator.git
@@ -172,7 +172,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/screenlocker.git
@@ -182,7 +182,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/texteditor.git
@@ -192,7 +192,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/calculator.git
@@ -202,7 +202,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/kwin-plugins.git
@@ -212,7 +212,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/videoplayer.git
@@ -222,7 +222,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/sddm-theme.git
@@ -232,7 +232,7 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/cutefishos/wallpapers.git
@@ -244,32 +244,32 @@ dpkg-buildpackage -b -uc -us > /dev/null
 mkdir build
 cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
-make -j$(nproc) > /dev/null
+make -j8 > /dev/null
 sudo make install
 cd ~/mxde
 git clone https://gitee.com/zhonghongsoftware_1/osfetch
 cd osfetch
-sudo make build -j$(nproc) > /dev/null
+sudo make build -j8 > /dev/null
 cp osfetch.deb ../
 cd ..
 git clone https://gitee.com/zhonghongsoftware_1/zpm-local
 cd zpm-local
-sudo make build -j$(nproc) > /dev/null
+sudo make build -j8 > /dev/null
 cp zpm.deb ../
 cd ..
 git clone https://gitee.com/zhonghongsoftware_1/update-shell
 cd update-shell
-sudo make build -j$(nproc) > /dev/null
+sudo make build -j8 > /dev/null
 cp update-shell.deb ../
 cd ..
 git clone https://gitee.com/zhonghongsoftware/update
 cd update
-sudo make build -j$(nproc) > /dev/null
+sudo make build -j8 > /dev/null
 cp update.deb ../
 cd ..
 git clone https://gitee.com/zhonghongsoftware/wine-control
 cd wine-control
-sudo make build -j$(nproc) > /dev/null
+sudo make build -j8 > /dev/null
 cp com.zhsoft.wine.control.deb ../
 cd ..
 cp ./*.deb  ./config/packages/
