@@ -274,5 +274,3 @@ cp com.zhsoft.wine.control.deb ../
 cd ..
 cp ./*.deb  ./config/packages/
 cd ..
-sudo live build
-ls
