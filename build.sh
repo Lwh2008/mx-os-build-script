@@ -218,4 +218,3 @@ sudo make build -j8 > /dev/null
 cp com.zhsoft.wine.control.deb ../
 cd ..
 cp ./*.deb  ./config/packages/
-cd ..
