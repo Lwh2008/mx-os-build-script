@@ -11,7 +11,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/dock.git
 cd dock
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -21,7 +21,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/fishui.git
 cd fishui
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -31,7 +31,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/screenshot.git
 cd screenshot
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -41,7 +41,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/qt-plugins.git
 cd qt-plugins
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -51,7 +51,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/terminal.git
 cd terminal
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -61,7 +61,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/launcher.git
 cd launcher
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -71,7 +71,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/zhonghongsoftware_1/meng-xi-os
 git clone https://gitee.com/cutefishos/settings.git
 rm settings/src/qml/About/Main.qml
@@ -86,7 +86,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/debinstaller.git
 cd debinstaller
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -96,7 +96,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/icons.git
 cd icons
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -106,7 +106,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/gtk-themes.git
 cd gtk-themes
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -116,7 +116,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/daemon.git
 cd daemon
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -126,7 +126,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/statusbar.git
 cd statusbar
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -136,7 +136,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/libcutefish.git
 cd libcutefish
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -146,7 +146,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/core.git
 cd core
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -156,7 +156,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/updator.git
 cd updator
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -166,7 +166,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/screenlocker.git
 cd screenlocker
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -176,7 +176,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/texteditor.git
 cd texteditor
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -186,7 +186,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/calculator.git
 cd calculator
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -196,7 +196,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/kwin-plugins.git
 cd kwin-plugins
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -206,7 +206,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/videoplayer.git
 cd videoplayer
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -216,7 +216,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/sddm-theme.git
 cd sddm-theme
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
@@ -226,7 +226,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/cutefishos/wallpapers.git
 rm -rf ./wallpapers/sources/*.png
 cp meng-xi-os/wallpaper/*.png ./wallpapers/sources/
@@ -238,7 +238,7 @@ cd build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr ..
 make -j8 > /dev/null
 sudo make install
-cd ~/mxde
+cd ../..
 git clone https://gitee.com/zhonghongsoftware_1/osfetch
 cd osfetch
 sudo make build -j8 > /dev/null
