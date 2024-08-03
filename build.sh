@@ -2,7 +2,7 @@
 pwd
 mkdir mxde
 cd mxde
-sudo apt install 'depends.list' --no-install-recommends -y
+sudo apt install 'depend.list' --no-install-recommends -y
 git clone https://gitee.com/cutefishos/filemanager.git
 cd filemanager
 sudo mk-build-deps ./debian/control -i -t "apt-get --yes" -r
