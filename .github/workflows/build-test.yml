@@ -12,6 +12,9 @@ jobs:
       run: |
         echo $USER
         bash build.sh
+   
+    - name: ls
+      run: ls ~ -a
 
     - name: upload-iso
       uses: actions/upload-artifact@v3
