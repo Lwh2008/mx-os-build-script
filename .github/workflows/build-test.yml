@@ -3,6 +3,7 @@ on: [push]
 jobs:
   package:
     runs-on: ubuntu-latest
+    container: debian
     steps:
 
     - name: Checkout repository
@@ -18,7 +19,7 @@ jobs:
       run: bash make-iso.sh
    
     - name: list&pack
-      run: tree && tar cjf mxde.tbz mxde
+      run: tree
 
     - name: upload-iso
       uses: actions/upload-artifact@v3
