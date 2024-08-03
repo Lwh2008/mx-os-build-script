@@ -20,6 +20,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mxos
-        path: ~/*.iso
+        path: ~/mxde/*.iso
         if-no-files-found: error
         retention-days: 30
