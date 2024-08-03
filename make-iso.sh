@@ -2,10 +2,10 @@
 cd ~
 mkdir iso
 cd iso
-sudo lb config --project-type=custom
-sudo lb config --distribution=mxos
-sudo lb config --architecture=amd64
-sudo lb config --build-type=iso
-sudo lb config --hostname=demo
-sudo lb config --include=/
-sudo lb build
+lb config --project-type=custom
+lb config --distribution=mxos
+lb config --architecture=amd64
+lb config --build-type=iso
+lb config --hostname=demo
+lb config --include=/
+lb build
