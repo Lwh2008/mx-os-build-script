@@ -8,19 +8,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: install-depend
+      run: bash depend.sh
+
     - name: build-test
-      run: |
-        echo $USER
-        bash build.sh
+      run: bash build.sh
 
     - name: build-iso
-      run: |
-        sudo apt install tree -y
-        bash make-iso.sh
+      run: bash make-iso.sh
    
-    - name: ls
-      run: |
-        tree
+    - name: list&pack
+      run: tree && tar cjf mxde.tbz mxde
 
     - name: upload-iso
       uses: actions/upload-artifact@v3
