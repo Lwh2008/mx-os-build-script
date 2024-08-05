@@ -1,6 +1,8 @@
 #!/bin/bash
 bash depend.sh
+unzip mxde.zip
 tar xjvf mxde.tbz
+rm mxde.zip mxde.tbz
 cd mxde
 dpkg -i debs/*
 cd filemanager/build
@@ -75,4 +77,5 @@ cd ../..
 cd osfetch/build
 make install
 cd ../../..
+rm mxde -r
 bash make-iso.sh
