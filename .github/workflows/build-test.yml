@@ -11,11 +11,14 @@ jobs:
     - name: install-depend
       run: bash depend.sh
 
-    - name: build-test
+    - name: pre-build
       run: bash build.sh
   
-    - name: list&pack
+    - name: file-list
       run: tree
+
+    - name: pack-binary
+      run: tar cjvf mxde.tbz mxde
 
     - name: upload-binary
       uses: actions/upload-artifact@v3
