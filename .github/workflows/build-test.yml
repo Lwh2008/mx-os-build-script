@@ -24,6 +24,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: mxde
-        path: mxde
+        path: mxde.tbz
         if-no-files-found: error
         retention-days: 30
