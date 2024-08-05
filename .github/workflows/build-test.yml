@@ -3,7 +3,6 @@ on: [push]
 jobs:
   package:
     runs-on: ubuntu-latest
-    container: debian
     steps:
 
     - name: Checkout repository
@@ -14,17 +13,14 @@ jobs:
 
     - name: build-test
       run: bash build.sh
-
-    - name: build-iso
-      run: bash make-iso.sh
-   
+  
     - name: list&pack
       run: tree
 
-    - name: upload-iso
+    - name: upload-binary
       uses: actions/upload-artifact@v3
       with:
-        name: mxos
-        path: /home/runner/work/mx-os-build-script/mx-os-build-script/*.iso
+        name: mxde
+        path: mxde
         if-no-files-found: error
         retention-days: 30
