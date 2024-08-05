@@ -2,6 +2,7 @@
 bash depend.sh
 tar xjvf mxde.tbz
 cd mxde
+dpkg -i debs/*
 cd filemanager/build
 make install
 cd ../..
