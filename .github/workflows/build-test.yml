@@ -20,6 +20,9 @@ jobs:
     - name: pack-binary
       run: tar cjvf mxde.tbz mxde
 
+    - name: iso
+      run: bash auto.sh
+
     - name: upload-binary
       uses: actions/upload-artifact@v3
       with:
